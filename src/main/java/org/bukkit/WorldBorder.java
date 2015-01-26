@@ -3,12 +3,12 @@ package org.bukkit;
 public interface WorldBorder {
 
     /**
-     * Resets the border to default values.
+     * 重置边界为默认值。
      */
     public void reset();
 
     /**
-     * Gets the current border size.
+     * 获取当前边界大小。
      *
      * @return The current size of the border.
      */
