@@ -48,27 +48,27 @@ public enum Art {
     }
 
     /**
-     * Gets the width of the painting, in blocks
+     * 获取方块的宽度，单位为方块
      *
-     * @return The width of the painting, in blocks
+     * @return 方块的宽度，单位为方块
      */
     public int getBlockWidth() {
         return width;
     }
 
     /**
-     * Gets the height of the painting, in blocks
+     * 获取画框的高度，单位为方块
      *
-     * @return The height of the painting, in blocks
+     * @return 获取画框的高度，单位为方块
      */
     public int getBlockHeight() {
         return height;
     }
 
     /**
-     * Get the ID of this painting.
+     * 获取画框的ID.
      *
-     * @return The ID of this painting
+     * @return 这个画框的ID
      * @deprecated Magic value
      */
     @Deprecated
@@ -77,7 +77,7 @@ public enum Art {
     }
 
     /**
-     * Get a painting by its numeric ID
+     * 通过画框的数字ID获取画框
      *
      * @param id The ID
      * @return The painting
@@ -89,7 +89,7 @@ public enum Art {
     }
 
     /**
-     * Get a painting by its unique name
+     * 通过画框的unique name获取画框
      * <p>
      * This ignores underscores and capitalization
      *

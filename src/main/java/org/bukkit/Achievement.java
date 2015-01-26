@@ -51,18 +51,18 @@ public enum Achievement {
     }
 
     /**
-     * Returns whether or not this achievement has a parent achievement.
+     * 返回这个成就是否有父成就
      * 
-     * @return whether the achievement has a parent achievement
+     * @return 这个成就是否有父成就
      */
     public boolean hasParent() {
         return parent != null;
     }
 
     /**
-     * Returns the parent achievement of this achievement, or null if none.
+     * 返回这个成就的父成就，如果没有则为null.
      * 
-     * @return the parent achievement or null
+     * @return 父成就或null
      */
     public Achievement getParent() {
         return parent;
