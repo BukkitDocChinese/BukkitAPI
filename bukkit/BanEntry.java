@@ -3,37 +3,36 @@ package org.bukkit;
 import java.util.Date;
 
 /**
- * A single entry from a ban list. This may represent either a player ban or
- * an IP ban.
+ * A single entry from a ban list. 这个可以表示玩家ban或者IP地址ban。.
  * <p>
- * Ban entries include the following properties:
+ * Ban entries 包括以下属性:
  * <table border=1>
  * <caption>Property information</caption>
  * <tr>
  *     <th>Property</th>
- *     <th>Description</th>
+ *     <th>描述</th>
  * </tr><tr>
  *     <td>Target Name / IP Address</td>
- *     <td>The target name or IP address</td>
+ *     <td>Ban目标名或者IP地址</td>
  * </tr><tr>
  *     <td>Creation Date</td>
- *     <td>The creation date of the ban</td>
+ *     <td>ban创建日期</td>
  * </tr><tr>
  *     <td>Source</td>
- *     <td>The source of the ban, such as a player, console, plugin, etc</td>
+ *     <td>Ban的来源，比如玩家，终端，插件等等</td>
  * </tr><tr>
  *     <td>Expiration Date</td>
- *     <td>The expiration date of the ban</td>
+ *     <td>Ban的过期日期</td>
  * </tr><tr>
  *     <td>Reason</td>
- *     <td>The reason for the ban</td>
+ *     <td>Ban的原因</td>
  * </tr>
  * </table>
  * <p>
- * Unsaved information is not automatically written to the implementation's
- * ban list, instead, the {@link #save()} method must be called to write the
- * changes to the ban list. If this ban entry has expired (such as from an
- * unban) and is no longer found in the list, the {@link #save()} call will
+ * 未保存的信息是不会自动写入到实施者的
+ * 中，然而， {@link #save()} method must be called to write the
+ * changes to the ban list. 如果这个ban entry已过期(比如来自
+ * unban) 并且无法在列表中找到, the {@link #save()} call will
  * re-add it to the list, therefore banning the victim specified.
  * <p>
  * Likewise, changes to the associated {@link BanList} or other entries may or
@@ -42,43 +41,40 @@ import java.util.Date;
 public interface BanEntry {
 
     /**
-     * Gets the target involved. This may be in the form of an IP or a player
-     * name.
+     * 获取参与的目标，这可以是用户名或者IP地址的形式
      *
-     * @return the target name or IP address
+     * @return 目标名或者IP地址
      */
     public String getTarget();
 
     /**
-     * Gets the date this ban entry was created.
+     * 获取这个ban entry创建的日期
      *
-     * @return the creation date
+     * @return 创建的日期
      */
     public Date getCreated();
 
     /**
-     * Sets the date this ban entry was created.
+     * 设置ban entry创建的日期
      *
-     * @param created the new created date, cannot be null
+     * @param created 新的创建日期，不能为空
      * @see #save() saving changes
      */
     public void setCreated(Date created);
 
     /**
-     * Gets the source of this ban.
+     * 获取ban的来源
      * <p>
-     * Note: A source is considered any String, although this is generally a
-     * player name.
+     * 备注：来源可以是任意字符串，即使这一般都是个玩家名。
      *
-     * @return the source of the ban
+     * @return ban的来源
      */
     public String getSource();
 
     /**
-     * Sets the source of this ban.
+     * 设置ban的来源
      * <p>
-     * Note: A source is considered any String, although this is generally a
-     * player name.
+     * 备注：来源可以为任意字符串，即使这一般都是个玩家名。
      *
      * @param source the new source where null values become empty strings
      * @see #save() saving changes
@@ -86,15 +82,14 @@ public interface BanEntry {
     public void setSource(String source);
 
     /**
-     * Gets the date this ban expires on, or null for no defined end date.
+     * 获取ban的过期日期，没有表示永久ban
      *
-     * @return the expiration date
+     * @return 过期日期
      */
     public Date getExpiration();
 
     /**
-     * Sets the date this ban expires on. Null values are considered
-     * "infinite" bans.
+     * 设置ban的过期时间，null表示永久ban
      *
      * @param expiration the new expiration date, or null to indicate an
      *     eternity
@@ -103,26 +98,25 @@ public interface BanEntry {
     public void setExpiration(Date expiration);
 
     /**
-     * Gets the reason for this ban.
+     * 获取ban的原因
      *
-     * @return the ban reason, or null if not set
+     * @return ban的原因，null表示未设置
      */
     public String getReason();
 
     /**
-     * Sets the reason for this ban. Reasons must not be null.
+     * 这是这个ban的原因. 原因必须不为null.
      *
-     * @param reason the new reason, null values assume the implementation
+     * @param reason 新原因, null values assume the implementation
      *     default
      * @see #save() saving changes
      */
     public void setReason(String reason);
 
     /**
-     * Saves the ban entry, overwriting any previous data in the ban list.
+     * 保存ban entry, 覆盖ban列表中所有原有数据
      * <p>
-     * Saving the ban entry of an unbanned player will cause the player to be
-     * banned once again.
+     * 保存一个未被ban的玩家的ban entry将会导致这个玩家被ban。
      */
     public void save();
 }

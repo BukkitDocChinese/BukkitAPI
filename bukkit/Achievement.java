@@ -53,7 +53,7 @@ public enum Achievement {
     /**
      * 返回这个成就是否有父成就
      * 
-     * @返回这个成就是否有父成就
+     * @return 这个成就是否有父成就
      */
     public boolean hasParent() {
         return parent != null;
@@ -62,7 +62,7 @@ public enum Achievement {
     /**
      * 返回这个成就的父成就，如果没有则为null.
      * 
-     * @返回父成就或null
+     * @return 父成就或null
      */
     public Achievement getParent() {
         return parent;
