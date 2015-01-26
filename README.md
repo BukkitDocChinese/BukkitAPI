@@ -6,10 +6,10 @@ JavaDoc译自<https://hub.spigotmc.org/stash/projects/SPIGOT/repos/bukkit/browse
 ## 目录&翻译状态
 
     bukkit
-    ├── Achievement.java
-    ├── Art.java
-    ├── BanEntry.java
-    ├── BanList.java
+    ├── Achievement.java                                //brainbush [完成]
+    ├── Art.java                                        //brainbush [完成]
+    ├── BanEntry.java                                   //brainbush [完成]
+    ├── BanList.java                                    //brainbush [完成]
     ├── block
     │   ├── banner
     │   │   ├── Pattern.java
@@ -708,7 +708,42 @@ JavaDoc译自<https://hub.spigotmc.org/stash/projects/SPIGOT/repos/bukkit/browse
     42 个目录, 656 个文件
 翻译规范
 --------
-首先在[README.md](README.md)中加入自己的………………
+首先在[README.md](README.md)中的翻译状态里想要翻译的章节后面以以下格式加入自己的名字
+
+`// 你的名字 [翻译状态]`
+
+翻译状态可选为:
+
+* 待译
+* 翻译
+* 完成
+* 更新
+
+`待译`为已经认领这个章节的翻译，但还没有开始翻译
+
+`翻译`为正在翻译中
+
+`完成`为已经完成的翻译
+
+`更新`为<http://wiki.vg/Protocol>中产生了更新，而原先翻译的已经过期，重新开始翻译
+
+例子：
+
+当多人合作一个翻译时可以写成名字中间加上`&`的形式
+
+如：`// bangbang93 & Bluek404 [翻译]`
+
+当产生更新时可以在后面追加翻译者
+
+如：`// bangbang93 [完成] Bluek404 [更新]`
+
+认领完成翻译章节后可以开始翻译
+
+先fork项目到自己的git，然后翻译完成后发起`Pull Request`
+
+等审核通过后再修改章节的翻译状态
+
+##### 感谢bangbang93提供的好的翻译方案
 
 
 

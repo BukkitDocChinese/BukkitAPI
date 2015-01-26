@@ -4,69 +4,64 @@ import java.util.Date;
 import java.util.Set;
 
 /**
- * A ban list, containing bans of some {@link Type}.
+ * 一个ban列表，包含一些 {@link Type} 类型的ban。
  */
 public interface BanList {
 
     /**
-     * Represents a ban-type that a {@link BanList} may track.
+     * 表示一个ban-type 使得 {@link BanList} 可追踪.
      */
     public enum Type {
         /**
-         * Banned player names
+         * 被ban玩家名字
          */
         NAME,
         /**
-         * Banned player IP addresses
+         * 被ban的IP地址
          */
         IP,
         ;
     }
 
     /**
-     * Gets a {@link BanEntry} by target.
+     * 通过目标获取一个 {@link BanEntry}
      *
-     * @param target entry parameter to search for
-     * @return the corresponding entry, or null if none found
+     * @param target 搜索的参数
+     * @return 返回有关结果，null表示无结果
      */
     public BanEntry getBanEntry(String target);
 
     /**
-     * Adds a ban to the this list. If a previous ban exists, this will
-     * update the previous entry.
+     * 添加一个ban到ban列表。如果有一个过去的ban存在，这会更新过去添加的ban。
      *
-     * @param target the target of the ban
-     * @param reason reason for the ban, null indicates implementation default
-     * @param expires date for the ban's expiration (unban), or null to imply
-     *     forever
-     * @param source source of the ban, null indicates implementation default
-     * @return the entry for the newly created ban, or the entry for the
-     *     (updated) previous ban
+     * @param target ban的目标
+     * @param reason ban的原因， null表示implementation default
+     * @param expires ban或unban的日期，null表示永久
+     * @param source ban的来源，null表示implementation default
+     * @return 最新创建的ban的entry，或者过去/更新的ban
      */
     public BanEntry addBan(String target, String reason, Date expires, String source);
 
     /**
-     * Gets a set containing every {@link BanEntry} in this list.
+     * 获得一个包含所有 {@link BanEntry} 在这列表中。
      *
      * @return an immutable set containing every entry tracked by this list
      */
     public Set<BanEntry> getBanEntries();
 
     /**
-     * Gets if a {@link BanEntry} exists for the target, indicating an active
-     * ban status.
+     * 获取目标的 {@link BanEntry} 是否存在，表示一个活动的ban状态。
      *
-     * @param target the target to find
-     * @return true if a {@link BanEntry} exists for the name, indicating an
-     *     active ban status, false otherwise
+     * @param target 所要寻找的目标
+     * @return 如果 {@link BanEntry} 有这名字存在返回true,表示一个活动的
+     * ban状态，否则为null。
      */
     public boolean isBanned(String target);
 
     /**
-     * Removes the specified target from this list, therefore indicating a
-     * "not banned" status.
+     * 从列表上删除一个指定目标，因此也会有"not banned"状态.
      *
-     * @param target the target to remove from this list
+     * @param target 要从列表上删除的目标
      */
     public void pardon(String target);
 }

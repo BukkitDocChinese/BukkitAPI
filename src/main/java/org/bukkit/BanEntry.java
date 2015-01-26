@@ -3,7 +3,7 @@ package org.bukkit;
 import java.util.Date;
 
 /**
- * A single entry from a ban list. 这个可以表示玩家ban或者IP地址ban。.
+ * 一个单独的ban list入口。这个可以表示玩家ban或者IP地址ban。.
  * <p>
  * Ban entries 包括以下属性:
  * <table border=1>
@@ -35,8 +35,7 @@ import java.util.Date;
  * unban) 并且无法在列表中找到, the {@link #save()} call will
  * re-add it to the list, therefore banning the victim specified.
  * <p>
- * Likewise, changes to the associated {@link BanList} or other entries may or
- * may not be reflected in this entry.
+ * 同样的，更改与 {@link BanList} 或其他entries可能影响或不影响这一entry.
  */
 public interface BanEntry {
 
