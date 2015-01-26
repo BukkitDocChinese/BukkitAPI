@@ -1,104 +1,101 @@
 package org.bukkit;
 
 /**
- * A delegate for handling block changes. This serves as a direct interface
- * between generation algorithms in the server implementation and utilizing
- * code.
+ * 一个处理方块更变的代表. 服务器作为一个计算服务器内生物生成和使用代码的
+ * 直接的接口.
  */
 public interface BlockChangeDelegate {
 
     /**
-     * Set a block type at the specified coordinates without doing all world
-     * updates and notifications.
+     * 指定特定坐标方块的类型而不需要进行全世界更新并通知
      * <p>
-     * It is safe to have this call World.setTypeId, but it may be slower than
-     * World.setRawTypeId.
+     * 通过调用World.setTypeId比较安全,但比可能使用World.setRawTypeId
+     * 慢一些.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param typeId New block ID
-     * @return true if the block was set successfully
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @param typeId 新方块ID
+     * @return true 如果方块成功设置
      * @deprecated Magic value
      */
     @Deprecated
     public boolean setRawTypeId(int x, int y, int z, int typeId);
 
     /**
-     * Set a block type and data at the specified coordinates without doing
-     * all world updates and notifications.
+     * 指定特定坐标方块的数据而不需要进行全世界更新并通知
      * <p>
-     * It is safe to have this call World.setTypeId, but it may be slower than
-     * World.setRawTypeId.
+     * 通过调用World.setTypeId比较安全,但比可能使用World.setRawTypeId
+     * 慢一些.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param typeId New block ID
-     * @param data Block data
-     * @return true if the block was set successfully
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @param typeId 新方块ID
+     * @param data 方块数据
+     * @return true 如果方块成功设置
      * @deprecated Magic value
      */
     @Deprecated
     public boolean setRawTypeIdAndData(int x, int y, int z, int typeId, int data);
 
     /**
-     * Set a block type at the specified coordinates.
+     * 设置指定坐标的方块类型.
      * <p>
-     * This method cannot call World.setRawTypeId, a full update is needed.
+     * 这方式不需要调用World.setRawTypeId,但需要全局更新.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param typeId New block ID
-     * @return true if the block was set successfully
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @param typeId 新方块ID
+     * @return true 如果方块成功设置
      * @deprecated Magic value
      */
     @Deprecated
     public boolean setTypeId(int x, int y, int z, int typeId);
 
     /**
-     * Set a block type and data at the specified coordinates.
+     * 设置指定坐标的方块类型和数据.
      * <p>
-     * This method cannot call World.setRawTypeId, a full update is needed.
+     * 这方式不需要调用World.setRawTypeId,但需要全局更新.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param typeId New block ID
-     * @param data Block data
-     * @return true if the block was set successfully
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @param typeId 新方块ID
+     * @param data 方块数据
+     * @return true 如果方块成功设置
      * @deprecated Magic value
      */
     @Deprecated
     public boolean setTypeIdAndData(int x, int y, int z, int typeId, int data);
 
     /**
-     * Get the block type at the location.
+     * 获取某一位置的方块类型.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @return The block ID
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @param typeId 新方块ID
      * @deprecated Magic value
      */
     @Deprecated
     public int getTypeId(int x, int y, int z);
 
     /**
-     * Gets the height of the world.
+     * 获取世界的高度.
      *
-     * @return Height of the world
+     * @return 世界的高度
      */
     public int getHeight();
 
     /**
-     * Checks if the specified block is empty (air) or not.
+     * 检查指定的方块是否为空（空气）.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @return True if the block is considered empty.
+     * @param x X 坐标
+     * @param y Y 坐标
+     * @param z Z 坐标
+     * @return true 如果方块成功设置
      */
     public boolean isEmpty(int x, int y, int z);
 }
